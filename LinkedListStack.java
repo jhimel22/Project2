@@ -79,73 +79,73 @@ public class LinkedListStack <T> implements Iterable <T>{
 	 * @throws NoSuchElementException if this stack is empty
 	 */
 
-//      public T peek() {
-// 		if (this.isEmpty()) {
-// 			// throw NoSuchElementException("Stack is empty");
-// 			return null;
-// 		}
-// 		return this.head.data;
-// 	}
+     public T peek() {
+		if (this.isEmpty()) {
+			// throw NoSuchElementException("Stack is empty");
+			return null;
+		}
+		return this.head.data;
+	}
 
-// 	/**
-// 	 * Returns a string representation of this stack.
-// 	 *
-// 	 * @return the sequence of items in this stack in LIFO order, separated by spaces
-// 	 */
-// 	public String toString() {
-// 		StringBuilder s = new StringBuilder();
-// 		for (T item : this) {
-// 			s.append(item);
-// 			s.append(' ');
-// 		}
-// 		return s.toString();
-// 	}
+	/**
+	 * Returns a string representation of this stack.
+	 *
+	 * @return the sequence of items in this stack in LIFO order, separated by spaces
+	 */
+	public String toString() {
+		StringBuilder s = new StringBuilder();
+		for (T item : this) {
+			s.append(item);
+			s.append(' ');
+		}
+		return s.toString();
+	}
 	   
 
-// 	/**
-// 	 * Returns an iterator to this stack that iterates through the items in LIFO order.
-// 	 *
-// 	 * @return an iterator to this stack that iterates through the items in LIFO order
-// 	 */
-// 	public Iterator<T> iterator() {
-// 		return new ListIterator();
-// 		}
+	/**
+	 * Returns an iterator to this stack that iterates through the items in LIFO order.
+	 *
+	 * @return an iterator to this stack that iterates through the items in LIFO order
+	 */
+	public Iterator<T> iterator() {
+		return new ListIterator();
+		}
 
-// 	/**
-// 	 * an iterator. we did not implement remove() since we don't use it here
-// 	 */
-// 	private class ListIterator implements Iterator<T> {
+	/**
+	 * an iterator. we did not implement remove() since we don't use it here
+	 */
+	private class ListIterator implements Iterator<T> {
 		
-// 		private Node current = head;
+		private Node current = head;
 		
-// 		public boolean hasNext() {
-// 			return current != null;
-// 		}
+		public boolean hasNext() {
+			return current != null;
+		}
 
-// 		public void remove() {
-// 			throw new NoSuchElementException();
-// 		}
+		public void remove() {
+			throw new NoSuchElementException();
+		}
 
-// 		public T next() {
-// 			if (!hasNext()) {
-// 				// throw new NoSuchElementException();
-// 				return null;
-// 			}
-// 			T curData = (T) current.data;
-// 			current = current.next;
-// 			return curData;
-// 		}
-// 	}
+		public T next() {
+			if (!hasNext()) {
+				// throw new NoSuchElementException();
+				return null;
+			}
+			T curData = (T) current.data;
+			current = current.next;
+			return curData;
+		}
+	}
 
-//     // unit testing
-//     public static void main (String[] args){
+    // unit testing
+    public static void main (String[] args){
 
-//         LinkedListStack<Integer> stack = new LinkedListStack<Integer>();
+        LinkedListStack<Integer> stack = new LinkedListStack<Integer>();
 
-//         stack.push(20);
-//         stack.push(33);
-//         stack.push(87);
+        stack.push(20);
+        stack.push(33);
+        stack.push(87);
 
-//         System.out.println("Head node is: " + stack.peek());
-//     }
-// }
+        System.out.println("Head node is: " + stack.peek());
+    }
+}

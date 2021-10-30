@@ -69,55 +69,55 @@ public class Assembler{
 	return results;
 }
 
-// 	// method to evaluate infix and produce assemb. and temp memory locations
-// 	private String evaluate(String left, String right, String operator){
+	// method to evaluate infix and produce assemb. and temp memory locations
+	private String evaluate(String left, String right, String operator){
 
-// 		String holder = "Holder obj: " + this.holder_val;
+		String holder = "Holder obj: " + this.holder_val;
 
-// 		String result = "";
+		String result = "";
 
-// 		// assembly code component
-// 		if (operator == '+'){
+		// assembly code component
+		if (operator == '+'){
 
-// 			result += "LD" + left + "\n";
-// 			result += "AD" + right + "\n";
-// 			result += "ST" + holder + "\n";
-// 			this.fWriter(evaluated);
+			result += "LD" + left + "\n";
+			result += "AD" + right + "\n";
+			result += "ST" + holder + "\n";
+			this.fWriter(evaluated);
 
-// 		}
+		}
 
-// 		else if(operator == '-'){
+		else if(operator == '-'){
 			
-// 			result += "LD" + left + "\n";
-// 			result += "SB" + right + "\n";
-// 			result += "ST" + holder + "\n";
-// 			this.fWriter(evaluated);
+			result += "LD" + left + "\n";
+			result += "SB" + right + "\n";
+			result += "ST" + holder + "\n";
+			this.fWriter(evaluated);
 			
-// 		}
+		}
 
-// 		else if(operator == '*'){
+		else if(operator == '*'){
 
-// 			result += "LD" + left + "\n";
-// 			result += "ML" + right + "\n";
-// 			result += "ST" + holder + "\n";
-// 			this.fWriter(evaluated);
-// 		}
+			result += "LD" + left + "\n";
+			result += "ML" + right + "\n";
+			result += "ST" + holder + "\n";
+			this.fWriter(evaluated);
+		}
 
-// 		else if (operator == '/'){
+		else if (operator == '/'){
 
-// 			result += "LD" + left + "\n";
-// 			result += "DV" + right + "\n";
-// 			result += "ST" + holder + "\n";
-// 		}
+			result += "LD" + left + "\n";
+			result += "DV" + right + "\n";
+			result += "ST" + holder + "\n";
+		}
 
-// 		else{
-// 			return null;
-// 			System.out.println("Invalid Entry! Please try again.");
-// 		}
-// 		this.holder_val++;
-// 	}
-// 	return holder;
-// }
+		else{
+			return null;
+			System.out.println("Invalid Entry! Please try again.");
+		}
+		this.holder_val++;
+	}
+	return holder;
+}
 
 
 // // main method
