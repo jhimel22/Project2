@@ -129,12 +129,13 @@ public class Postfix{
 		String ex = "( ( A + ( B * C ) ) / ( D - E ) ) ;";
 		String infix = "( ( H * ( ( ( ( A + ( ( B + C ) * D ) ) * F ) * G ) * E ) ) + J ) ;";
 		String ex1 = "( ( AX + ( BY * C ) ) / ( D4 - E ) ) ;";
+		
 		System.out.println(infixToPostfix(input));
 		System.out.println(infixToPostfix(infix));
 		System.out.println(infixToPostfix(ex));
 		System.out.println(infixToPostfix(ex1));
 
-
+ 
 		writeToFile("data3-1.txt", "data3-1-postfix.txt");
 		writeToFile("data3-2-1.txt", "data3-2-1-postfix.txt");
 	}
