@@ -7,23 +7,25 @@ import java.util.NoSuchElementException;
 
 public class LinkedListStack <T> implements Iterable <T>{
 
-    private int size;
-    private Node head;
+    private int size;          // size of the stack
+	private Node head;     // top of stack
 
-    private class Node {
 
-        private T data;
-        private Node next;
-    }
+    // helper linked list class
+	private class Node {
+		private T data;
+		private Node next;
+	}
 
-    // initializes empty stack
-    public LinkedListStack(){
+   /**
+	 * Initializes an empty stack.
+	 */
+	public LinkedListStack() {
+		this.head = null;
+		this.size = 0;
+	}
 
-        this.head = null;
-        this.size = 0;
-    }
-
-    	/**
+	/**
 	 * Returns true if this stack is empty.
 	 *
 	 * @return true if this stack is empty; false otherwise
@@ -32,25 +34,27 @@ public class LinkedListStack <T> implements Iterable <T>{
 		return this.head==null;
 	}
 
-    public int size(){
+	/**
+	 * Returns the number of items in this stack.
+	 *
+	 * @return the number of items in this stack
+	 */
+	public int size() {
+		return this.size;
+	}
 
-        return this.size;
-    }
-
-    	/**
+	/**
 	 * Adds the item to this stack.
 	 *
 	 * @param  item the item to add
 	 */
-
-     public void push (T val){
-         
-         Node prev = this.head;
-         this.head = new Node();
-         this.head.data = val;
-         this.head.next = prev;
-         this.size++;
-     }
+	public void push(T val) {
+		Node prev = this.head;
+		this.head = new Node();
+		this.head.data = val;
+		this.head.next = prev;
+		this.size++;
+	}
 
 	/**
 	 * Removes and returns the item most recently added to this stack.
@@ -58,19 +62,16 @@ public class LinkedListStack <T> implements Iterable <T>{
 	 * @return the item most recently added
 	 * @throws NoSuchElementException if this stack is empty
 	 */
-
-     public T pop(){
-
-         if(this.isEmpty()){
-
-             return null;
-         }
-         
-         T data = this.head.data;
-         head = head.next;
-         this.size--;
-         return data;
-     }
+	public T pop() {
+		if (this.isEmpty()) { 
+			// throw NoSuchElementException("Stack is empty");
+			return null;
+		} 
+		T data = this.head.data;
+		head = head.next;
+		this.size--;
+		return data;
+	}
 
      /**
 	 * Returns (but does not remove) the item most recently added to this stack.
@@ -147,5 +148,19 @@ public class LinkedListStack <T> implements Iterable <T>{
         stack.push(87);
 
         System.out.println("Head node is: " + stack.peek());
+
+		stack.push(37);
+		stack.push(99);
+		stack.push(12);
+
+		System.out.println("After push, size of the stack: " + stack.size());
+		System.out.println("Top is now: " + stack.peek());
+	   
+		System.out.println("*** Testing pop ***");
+		while (!stack.isEmpty()){
+			System.out.println("popped: " + stack.pop());
+		}
+	   
+		System.out.println("After popping, size of the stack: " + stack.size());
     }
 }
