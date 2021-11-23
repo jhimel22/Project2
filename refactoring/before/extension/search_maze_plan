@@ -1,0 +1,15 @@
+Extension: Search_maze_plan
+    Code Smells
+        A. 2 "if name == __main__():"``
+        B. Contains window and turtle function, but maybe slight variation.
+        C. Make Grid is similar to connect 4
+        D. Many Comment blocked lines of code
+
+
+    Refactoring Plan
+        1. merge if name == main (ref. A)
+        2. adjust window and turtle helper graphics file (ref. B)
+        3. change function calls to accomodate helper graphics (ref. B)
+        4. Implement abstract grid class that can implement both type, design pattern?(ref. C)
+        5. Move code blocks into well titled functions (ref. D)
+

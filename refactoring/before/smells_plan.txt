@@ -1,0 +1,41 @@
+Code Smells
+    General
+        A. 	Make window + make turtle are in both files
+
+        B.	Both main functions start a game and maintain
+		 the game, There are lots of comments
+
+    Class Based Pong
+        A. 	A couple long lines, conditional and "math one liners"
+
+    Connect 4
+        A.	Long conditional checks
+
+        B.	All like one class/function/ global -- check TicTacToe very similar
+
+Refactoring Plan
+    General
+        1.	Create importable Graphics helper file to import 
+		into each game (Ref General A.)
+
+
+    Class Based Pong
+        1.	Move whole main function into a "factory" that sets up game; 
+			Break up by comments (Ref General B.)
+
+        2.	Replace inline functions with good variable names 
+			ie. new_x instead of x + ball.dx (ref Class Based Pong A.)
+		
+	
+        3.	Encapsulate the long if checks within a function with helpful 
+			variable names (ref Class Based Pong A.)
+
+    Connect 4
+        1.	Move whole main function into a "factory" that sets up game; 
+			Break up by comments (Ref General B.)
+
+        2.	use "flag booleans" that make the line shorter and easier
+			to read (ref Connect 4 A.)
+
+        3.	Break global code/ into new functions with comment blocks 
+			as names (ref Connect 4 B.)
